@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="http://sumo.sf.net/xsd/sumoConfiguration.xsd">
+    <input>
+        <net-file value="net.net.xml"/>
+		  <route-files value="routes.xml"/>
+		  <additional-files value="sumoSaveData.xml"/>
+    </input>
+
+    <time>
+		<begin value="32400"/>
+		<end value="39600"/>
+		<step-length value ="1"/>
+    </time>
+
+    <gui_only>
+    	<start value="true"/>
+    	<quit-on-end value="true"/>
+    </gui_only>
+
+</configuration>
