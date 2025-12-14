@@ -1,7 +1,6 @@
 import xml.etree.ElementTree as ET
 import os
 import pandas as pd
-import matplotlib.pyplot as plt
 
 # Configuration
 SCENARIOS_DIR = "scenarios"

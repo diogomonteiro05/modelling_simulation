@@ -14,28 +14,31 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 def calculate_ev_share(toll_price):
     """
-    Calculates EV adoption share based on toll price using a sigmoid function.
-    
-    Special case: 0% EV share at 0 euro toll (baseline with no incentive)
-    For toll > 0: sigmoid function drives adoption
-    
-    Sigmoid parameters:
-    - Min EV share: 0% at toll = 0
-    - Max EV share: 100% (1.0) - Saturation point
-    - Midpoint: 1.5 Euro toll (50% adoption)
+    Calculates EV adoption share based on toll price using a sigmoid function
+    with a non-zero baseline.
+
+    Intuition (tunable assumptions):
+    - Baseline EV share at 0 EUR toll: 15%
+    - Midpoint (about 50% EV share): around 1.5 EUR
+    - Saturation: values asymptotically approaching ~90% at high tolls
     - Steepness (k): 0.5
     """
-    # Return 0% EV share when toll is 0 or negative
-    if toll_price <= 0:
-        return 0.0
-    
-    max_share = 1.0
+    # Baseline EV share even with zero toll (realistic non-zero adoption)
+    baseline_share = 0.15  # 15% at toll = 0
+
+    # Sigmoid controls the *additional* adoption above the baseline
+    max_share = 0.90       # saturation level for total EV share
     midpoint = 1.5
     k = 0.5
-    
-    # Sigmoid starting from 0 at toll=0
-    share = max_share / (1 + math.exp(-k * (toll_price - midpoint)))
-    return share
+
+    # Standard sigmoid in [0, 1]
+    sigmoid = 1 / (1 + math.exp(-k * (toll_price - midpoint)))
+
+    # Map sigmoid output to [baseline_share, max_share]
+    share = baseline_share + (max_share - baseline_share) * sigmoid
+
+    # Safety clamp
+    return max(0.0, min(1.0, share))
 
 def generate_scenario(toll_price):
     ev_share = calculate_ev_share(toll_price)
