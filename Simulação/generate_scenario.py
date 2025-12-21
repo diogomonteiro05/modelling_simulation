@@ -28,7 +28,7 @@ def calculate_ev_share(toll_price):
 
     # Sigmoid controls the *additional* adoption above the baseline
     max_share = 0.90       # saturation level for total EV share
-    midpoint = 1.5
+    midpoint = 2.5
     k = 0.5
 
     # Standard sigmoid in [0, 1]

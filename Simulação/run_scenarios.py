@@ -6,7 +6,7 @@ import platform
 # Configuration
 SCENARIOS_DIR = "scenarios"
 GENERATE_SCRIPT = "generate_scenario.py"
-TOLL_PRICES = [0, 0.5, 1.0, 1.5, 2, 2.5, 3.0]
+TOLL_PRICES = [0, 0.5, 1.0, 1.5, 2, 2.5, 3.0, 3.5, 4, 4.5, 5]
 
 # Resolve SUMO binary in a cross-platform way.
 # Priority:
