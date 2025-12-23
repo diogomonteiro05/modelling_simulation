@@ -37,6 +37,8 @@ python analyze_results.py
 *   Generates a report: `simulation_report.md`
 *   Saves data to: `simulation_results.csv`
 
+You can also inspect the results interactively in the Jupyter notebook `results_analysis.ipynb`, which visualizes EV share, CO₂, grid cost, toll revenue, and per-vehicle indicators based on `simulation_results.csv`.
+
 ### 3. Sensitivity Analysis (Optional)
 Test how sensitive the model is to changes in parameters (sigmoid midpoint, strictness, baseline).
 
@@ -52,6 +54,7 @@ python sensitivity_test.py
 *   **`analyze_results.py`**: Processes simulation outputs to compute KPIs (CO2, Grid Cost, Revenue).
 *   **`create_vci_demand.py`**: (Setup) Generates the initial random traffic demand (`trips_vci_generated.xml`) compatible with the VCI network.
 *   **`sensitivity_test.py`**: Performs one-at-a-time sensitivity analysis on model parameters.
+*   **`results_analysis.ipynb`**: Jupyter notebook for viewing and exploring the summarized results in `simulation_results.csv`.
 *   **`vci.net.xml`**: The SUMO road network file.
 *   **`scenarios/`**: Contains generated config files, routes, and simulation output (`tripinfo`).
 
