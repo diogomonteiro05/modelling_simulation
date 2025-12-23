@@ -1,4 +1,0 @@
-<additional>
-  <edgeData id="simData" freq="300" file="simData.xml"/>
-  <laneData id="simData" freq="300" file="simDataLane.xml"/>
-</additional>

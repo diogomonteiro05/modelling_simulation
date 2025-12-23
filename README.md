@@ -37,7 +37,7 @@ python analyze_results.py
 *   Generates a report: `simulation_report.md`
 *   Saves data to: `simulation_results.csv`
 
-You can also inspect the results interactively in the Jupyter notebook `results_analysis.ipynb`, which visualizes EV share, CO₂, grid cost, toll revenue, and per-vehicle indicators based on `simulation_results.csv`.
+You can also inspect the results interactively in the Jupyter notebook `results_analysis.ipynb`, which visualizes EV share, CO₂, grid cost, toll revenue, and per-vehicle indicators based on `simulation_results.csv`. If you re-run this step, re-run the notebook so the tables and plots reflect the latest results.
 
 ### 3. Sensitivity Analysis (Optional)
 Test how sensitive the model is to changes in parameters (sigmoid midpoint, strictness, baseline).
